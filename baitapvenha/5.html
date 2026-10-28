@@ -1,0 +1,13 @@
+<script>
+    let hoaDon = Number(prompt("Nhập tổng số tiền hóa đơn (VNĐ):"));
+let soTienPhaiTra;
+
+if (hoaDon > 500000) {
+    // Giảm 10% tức là chỉ phải trả 90% số tiền
+    soTienPhaiTra = hoaDon * 0.9;
+    console.log("Bạn được giảm giá 10%! Số tiền cuối cùng phải trả là: " + soTienPhaiTra.toLocaleString() + "đ");
+} else {
+    soTienPhaiTra = hoaDon;
+    console.log("Hóa đơn dưới 500.000đ, không được giảm giá. Số tiền phải trả là: " + soTienPhaiTra.toLocaleString() + "đ");
+}
+</script>

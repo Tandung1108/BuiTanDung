@@ -1,0 +1,8 @@
+<script>
+let usd = Number(prompt("Nhập số lượng USD cần đổi:"));
+let tyGia = 25000;
+let vnd = usd * tyGia;
+
+// Sử dụng hàmtoLocaleString để định dạng số tiền cho dễ đọc (ví dụ: 1,250,000đ)
+console.log(usd + " USD tương đương với " + vnd.toLocaleString() + " VND");
+</script>

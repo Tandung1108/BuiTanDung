@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Bước 1: Lấy điểm số từ người dùng thông qua hộp thoại prompt()
+let input = prompt("Nhập vào số điểm của bạn (0 - 10):");
+
+// Bước 2: Chuyển đổi dữ liệu từ chuỗi (string) sang số thực (float)
+let diem = parseFloat(input);
+
+// Bước 3: Kiểm tra tính hợp lệ và phân loại điểm số
+if (isNaN(diem) || diem < 0 || diem > 10) {
+    alert("Vui lòng nhập một số hợp lệ từ 0 đến 10!");
+} else {
+    // Phân loại theo yêu cầu
+    if (diem > 8) {
+        alert("Xếp loại: Giỏi");
+    } else if (diem > 6.5) {
+        alert("Xếp loại: Khá");
+    } else if (diem >= 5) {
+        alert("Xếp loại: Trung bình");
+    } else {
+        alert("Xếp loại: Yếu");
+    }
+}
+    </script>
+</body>
+</html>
