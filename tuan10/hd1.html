@@ -1,0 +1,15 @@
+<ul id="menu">
+    <li>Trang chủ</li>
+    <li>Giới thiệu</li>
+    <li>Sản phẩm</li>
+</ul>
+
+<script>
+    // Dùng querySelectorAll để chọn tất cả các thẻ li bên trong #menu
+    const items = document.querySelectorAll('#menu li');
+    
+    // Dùng vòng lặp để đổi màu chữ sang màu đỏ
+    items.forEach(item => {
+        item.style.color = 'red';
+    });
+</script>

@@ -1,0 +1,19 @@
+<!-- Nút bấm đổi Dark Mode / Sáng Tối -->
+<button id="toggle-btn">Bật Dark Mode</button>
+
+<script>
+    const toggleBtn = document.getElementById('toggle-btn');
+    
+    toggleBtn.addEventListener('click', function() {
+        // Thay đổi màu nền của body
+        if (document.body.style.backgroundColor === 'black') {
+            document.body.style.backgroundColor = 'white';
+            document.body.style.color = 'black';
+            toggleBtn.innerText = 'Bật Dark Mode';
+        } else {
+            document.body.style.backgroundColor = 'black';
+            document.body.style.color = 'white';
+            toggleBtn.innerText = 'Tắt Dark Mode';
+        }
+    });
+</script>
