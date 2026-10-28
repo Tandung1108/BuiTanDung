@@ -1,47 +1,53 @@
-<script>
-    // Hàm hiển thị thông báo chào mừng theo thời gian thực
-function showWelcomeNotification() {
-    // Lấy giờ hiện tại (hệ thống trả về từ 0 đến 23)
-    const hours = new Date().getHours();
-    let greeting = "";
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lời chào và Thời gian thực - DOM</title>
+</head>
+<body>
 
-    // Phân loại thời gian trong ngày
-    if (hours >= 5 && hours < 12) {
-        greeting = "🌅 Chào buổi sáng! Chúc bạn một ngày mới tràn đầy năng lượng.";
-    } else if (hours >= 12 && hours < 18) {
-        greeting = "☀️ Chào buổi chiều! Chúc bạn làm việc hiệu quả.";
-    } else {
-        greeting = "🌙 Chào buổi tối! Chúc bạn có buổi tối thư giãn.";
-    }
+    <!-- Thẻ HTML có sẵn id="loichao" để DOM tìm và cập nhật nội dung -->
+    <h1 id="loichao">Đang tải...</h1>
 
-    // Tạo một thông báo dạng Floating Toast hiển thị góc phải màn hình
-    const toast = document.createElement('div');
-    toast.innerText = greeting;
-    
-    // Style giao diện thông báo
-    toast.style.position = 'fixed';
-    toast.style.bottom = '20px';
-    toast.style.right = '20px';
-    toast.style.backgroundColor = '#10B981'; // Màu xanh lá hiện đại
-    toast.style.color = '#FFFFFF';
-    toast.style.padding = '12px 20px';
-    toast.style.borderRadius = '8px';
-    toast.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-    toast.style.zIndex = '9999';
-    toast.style.fontFamily = 'sans-serif';
-    toast.style.fontSize = '14px';
-    toast.style.transition = 'opacity 0.5s ease';
+    <script>
+        function capNhatThoiGianThuc() {
+            // 1. Khởi tạo đối tượng Date để lấy thời gian hiện tại của hệ thống
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            const seconds = now.getSeconds();
 
-    // Thêm vào body của trang web
-    document.body.appendChild(toast);
+            // 2. Phân loại lời chào theo buổi trong ngày
+            let greeting = "";
+            if (hours >= 5 && hours < 12) {
+                greeting = "Chào buổi sáng!";
+            } else if (hours >= 12 && hours < 18) {
+                greeting = "Chào buổi chiều!";
+            } else {
+                greeting = "Chào buổi tối!";
+            }
 
-    // Tự động ẩn thông báo sau 4 giây
-    setTimeout(() => {
-        toast.style.opacity = '0';
-        setTimeout(() => toast.remove(), 500);
-    }, 4000);
-}
+            // 3. Định dạng lại phút và giây luôn có 2 chữ số (ví dụ: 09 thay vì 9)
+            const phut = minutes < 10 ? "0" + minutes : minutes;
+            const giay = seconds < 10 ? "0" + seconds : seconds;
+            const gio = hours < 10 ? "0" + hours : hours;
 
-// Kích hoạt khi trang web tải xong
-window.addEventListener('DOMContentLoaded', showWelcomeNotification);
-</script>
+            // 4. Tổng hợp nội dung: Lời chào + Đồng hồ thời gian thực
+            const noiDungHienThi = `${greeting} (Bây giờ là: ${gio}:${phut}:${giay})`;
+
+            // 5. Sử dụng DOM để tìm thẻ id="loichao" và cập nhật nội dung
+            const element = document.getElementById("loichao");
+            if (element) {
+                element.innerText = noiDungHienThi;
+            }
+        }
+
+        // Chạy ngay khi trang vừa tải xong
+        document.addEventListener("DOMContentLoaded", function() {
+            capNhatThoiGianThuc(); // Gọi lần đầu tiên lập tức
+            setInterval(capNhatThoiGianThuc, 1000); // Tự động cập nhật lại mỗi giây (1000ms) để đồng hồ chạy liên tục
+        });
+    </script>
+
+</body>
+</html>
