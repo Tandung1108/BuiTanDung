@@ -1,0 +1,47 @@
+<script>
+    // Hàm hiển thị thông báo chào mừng theo thời gian thực
+function showWelcomeNotification() {
+    // Lấy giờ hiện tại (hệ thống trả về từ 0 đến 23)
+    const hours = new Date().getHours();
+    let greeting = "";
+
+    // Phân loại thời gian trong ngày
+    if (hours >= 5 && hours < 12) {
+        greeting = "🌅 Chào buổi sáng! Chúc bạn một ngày mới tràn đầy năng lượng.";
+    } else if (hours >= 12 && hours < 18) {
+        greeting = "☀️ Chào buổi chiều! Chúc bạn làm việc hiệu quả.";
+    } else {
+        greeting = "🌙 Chào buổi tối! Chúc bạn có buổi tối thư giãn.";
+    }
+
+    // Tạo một thông báo dạng Floating Toast hiển thị góc phải màn hình
+    const toast = document.createElement('div');
+    toast.innerText = greeting;
+    
+    // Style giao diện thông báo
+    toast.style.position = 'fixed';
+    toast.style.bottom = '20px';
+    toast.style.right = '20px';
+    toast.style.backgroundColor = '#10B981'; // Màu xanh lá hiện đại
+    toast.style.color = '#FFFFFF';
+    toast.style.padding = '12px 20px';
+    toast.style.borderRadius = '8px';
+    toast.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    toast.style.zIndex = '9999';
+    toast.style.fontFamily = 'sans-serif';
+    toast.style.fontSize = '14px';
+    toast.style.transition = 'opacity 0.5s ease';
+
+    // Thêm vào body của trang web
+    document.body.appendChild(toast);
+
+    // Tự động ẩn thông báo sau 4 giây
+    setTimeout(() => {
+        toast.style.opacity = '0';
+        setTimeout(() => toast.remove(), 500);
+    }, 4000);
+}
+
+// Kích hoạt khi trang web tải xong
+window.addEventListener('DOMContentLoaded', showWelcomeNotification);
+</script>

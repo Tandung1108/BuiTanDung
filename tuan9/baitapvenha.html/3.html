@@ -1,0 +1,17 @@
+<script>
+    // Bài 3: Kiểm tra số nguyên tố cơ bản
+function kiemTraSoNguyenTo(num) {
+    if (num <= 1) return false; // Số <= 1 không phải số nguyên tố
+    
+    for (let i = 2; i < num; i++) {
+        if (num % i === 0) {
+            return false; // Chia hết cho số khác ngoài 1 và chính nó
+        }
+    }
+    return true;
+}
+
+console.log("--- KIỂM TRA SỐ NGUYÊN TỐ ---");
+console.log("Số 7 có phải số nguyên tố?", kiemTraSoNguyenTo(7));   // true
+console.log("Số 10 có phải số nguyên tố?", kiemTraSoNguyenTo(10)); // false
+</script>

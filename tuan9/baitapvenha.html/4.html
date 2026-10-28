@@ -1,0 +1,21 @@
+<script>
+    // Bài 4: Máy tính cá nhân (Calculator Function)
+function calculator(so1, so2, phepTinh) {
+    switch (phepTinh) {
+        case '+':
+            return so1 + so2;
+        case '-':
+            return so1 - so2;
+        case '*':
+            return so1 * so2;
+        case '/':
+            return so2 !== 0 ? so1 / so2 : "Không thể chia cho 0";
+        default:
+            return "Phép tính không hợp lệ";
+    }
+}
+
+console.log("--- MÁY TÍNH CÁ NHÂN ---");
+console.log("10 + 5 =", calculator(10, 5, '+'));
+console.log("10 / 2 =", calculator(10, 2, '/'));
+</script>

@@ -1,0 +1,22 @@
+<script>
+function tinhDienTich(dai, rong) {
+    return dai * rong;
+}
+
+console.log("--- KẾT QUẢ TÍNH DIỆN TÍCH ---");
+console.log("Hình chữ nhật 1 (5 x 10):", tinhDienTich(5, 10));
+console.log("Hình chữ nhật 2 (7.5 x 3):", tinhDienTich(7.5, 3));
+console.log("Hình chữ nhật 3 (12 x 4):", tinhDienTich(12, 4));
+
+
+function chaoVaTinhTuoi(ten, namSinh) {
+    const namHienTai = new Date().getFullYear(); // Tự động lấy năm hiện tại (2026)
+    const tuoi = namHienTai - namSinh;
+    
+    return `Chào ${ten}, bạn hiện tại ${tuoi} tuổi`;
+}
+
+console.log("\n--- KẾT QUẢ TÍNH TUỔI ---");
+const ketQuaChao = chaoVaTinhTuoi("Dũng", 2005);
+console.log(ketQuaChao);
+</script>
