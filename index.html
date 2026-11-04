@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Cá Nhân | Interactive Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CUSTOM CURSOR (Bài 6) -->
+    <div class="cursor" id="main-cursor"></div>
+
+    <!-- HEADER & NAVIGATION (Bài 1, Bài 3, Bài 4) -->
+    <header class="header" id="site-header">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">Portfolio<span>.</span></a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link">Trang Chủ</a>
+                <a href="#about" class="nav-link">Giới Thiệu</a>
+                <a href="#skills" class="nav-link">Kỹ Năng</a>
+                <a href="#projects" class="nav-link">Dự Án</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Nút chuyển đổi Dark/Light Mode (Bài 4) -->
+                <button id="theme-toggle-btn" class="theme-toggle-btn" title="Chuyển đổi Dark/Light Mode">
+                    <i class="fa-solid fa-moon" id="theme-icon"></i>
+                </button>
+                <!-- Hamburger Menu Mobile (Bài 3) -->
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT CONTAINER (Semantic HTML5 - Bài 1) -->
+    <main>
+        <!-- HERO SECTION (Bài 1 & Bài 6 Typewriter) -->
+        <section id="hero" class="hero-section">
+            <div class="container hero-content">
+                <span class="badge">Frontend Developer & Creator</span>
+                <h1>Xin chào, tôi là <span class="highlight">Lập Trình Viên</span></h1>
+                <p id="typewriter-text" class="typewriter">Chuyên xây dựng giao diện web hiện đại, tối ưu trải nghiệm người dùng với hiệu ứng sống động.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="magnetic-btn btn-primary">Xem Dự Án</a>
+                    <a href="#about" class="magnetic-btn btn-outline">Về Tôi</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION (Bài 1) -->
+        <article id="about" class="about-section">
+            <div class="container about-grid">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=600&q=80" alt="About Me" loading="lazy">
+                </div>
+                <div class="about-text">
+                    <span class="badge">Về Bản Thân</span>
+                    <h2>Đam Mê Sáng Tạo & Tối Ưu Trải Nghiệm Số</h2>
+                    <p>Tôi luôn chú trọng đến việc thiết kế cấu trúc mã nguồn sạch sẽ (Semantic HTML), kết hợp bố cục linh hoạt bằng CSS Grid/Flexbox và tương tác mượt mà bằng JavaScript.</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- KỸ NĂNG SECTION (Bài 2 - CSS Grid & Flexbox) -->
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Hệ Thống Kỹ Năng</h2>
+                    <p>Các công nghệ và công cụ tôi sử dụng hàng ngày.</p>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fa-brands fa-html5"></i>
+                        <h3>Semantic HTML5</h3>
+                        <p>Xây dựng cấu trúc chuẩn SEO, dễ bảo trì.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-brands fa-css3-alt"></i>
+                        <h3>CSS Grid & Flexbox</h3>
+                        <p>Thiết kế hệ thống lưới linh hoạt, responsive đa thiết bị.</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fa-brands fa-js"></i>
+                        <h3>JavaScript (ES6+)</h3>
+                        <p>Xử lý logic bất đồng bộ, DOM và tương tác thời gian thực.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DỰ ÁN SECTION (Bài 5: Google Sheets Dynamic Data & Lọc danh mục Bài 6) -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Danh Sách Dự Án</h2>
+                    <p>Dữ liệu được đồng bộ trực tiếp từ Google Sheets và lọc theo danh mục.</p>
+                </div>
+
+                <!-- Bộ lọc danh mục (Bài 6) -->
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">Tất Cả</button>
+                    <button class="filter-btn" data-filter="web">Web App</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                </div>
+
+                <!-- Khu vực đổ dữ liệu từ Google Sheets (Bài 5) -->
+                <div id="project-grid" class="project-grid">
+                    <div class="loading-spinner">Đang tải dữ liệu dự án từ Google Sheets...</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER (Bài 1) -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Portfolio Cá Nhân. Thiết kế tích hợp toàn diện 6 bài tập.</p>
+            <div class="social-links">
+                <a href="#" class="magnetic-btn"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="magnetic-btn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

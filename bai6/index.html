@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Immersive Experience | Interactive Showcase</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- CUSTOM CURSOR & TRAIL (Đuôi sao băng) -->
+    <div class="cursor" id="main-cursor"></div>
+    <div class="cursor-trail" style="--index: 1;"></div>
+    <div class="cursor-trail" style="--index: 2;"></div>
+    <div class="cursor-trail" style="--index: 3;"></div>
+    <div class="cursor-trail" style="--index: 4;"></div>
+
+    <!-- STICKY SMOOTH NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#hero" class="logo">IMMERSE<span>.</span></a>
+            <nav class="nav-menu">
+                <a href="#hero" class="nav-link">Trang Chủ</a>
+                <a href="#parallax" class="nav-link">Đa Tầng</a>
+                <a href="#interactive" class="nav-link">Tương Tác</a>
+                <a href="#contact" class="nav-link">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-content">
+            <span class="badge">Next-Gen Web Experience</span>
+            <h1 class="reveal-text">Không Gian Trải Nghiệm Số Sống Động</h1>
+            <p>Khám phá công nghệ tương tác mượt mà với hiệu ứng con trỏ tùy chỉnh, cuộn trang đa tầng Parallax và nút bấm hút nam châm đạt chuẩn 60fps.</p>
+            <div class="hero-actions">
+                <button class="magnetic-btn btn-primary" onclick="document.getElementById('parallax').scrollIntoView({behavior: 'smooth'})">
+                    <span class="btn-text">Bắt Đầu Khám Phá</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PARALLAX & TEXT REVEAL -->
+    <section id="parallax" class="parallax-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hiệu Ứng Cuộn Đa Tầng (Parallax)</h2>
+                <p>Các lớp hình ảnh và phần tử chuyển động theo tốc độ khác nhau khi cuộn trang.</p>
+            </div>
+            
+            <div class="parallax-grid">
+                <div class="parallax-card layer-bg" data-speed="0.05">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="Parallax 1" loading="lazy">
+                    <div class="card-info">
+                        <h3>Lớp Chiều Sâu 01</h3>
+                        <p>Tối ưu hóa phần cứng GPU bằng will-change: transform.</p>
+                    </div>
+                </div>
+                <div class="parallax-card layer-bg" data-speed="0.1">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Parallax 2" loading="lazy">
+                    <div class="card-info">
+                        <h3>Lớp Chiều Sâu 02</h3>
+                        <p>Sử dụng requestAnimationFrame để đạt 60fps tuyệt đối.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION INTERACTIVE MAGNETIC BUTTONS -->
+    <section id="interactive" class="interactive-section">
+        <div class="container text-center">
+            <span class="badge">Magnetic Physics</span>
+            <h2 class="reveal-text">Nút Bấm Hút Nam Châm (Magnetic Buttons)</h2>
+            <p class="section-desc">Di chuyển chuột đến gần các nút bấm dưới đây để cảm nhận lực hút vật lý.</p>
+            
+            <div class="button-group">
+                <button class="magnetic-btn btn-glow"><span>Khám Phá Thêm</span></button>
+                <button class="magnetic-btn btn-outline"><span>Liên Hệ Ngay</span></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Interactive Immersive Experience. Bài tập thực hành nâng cao.</p>
+            <div class="social-links">
+                <a href="#" class="magnetic-btn"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="magnetic-btn"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="magnetic-btn"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

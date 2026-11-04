@@ -1,0 +1,475 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    --accent-glow: #00f2fe;
+    --text-color: #f8fafc;
+}
+
+body {
+    min-height: 100vh;
+    background: #090a16;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(120, 50, 255, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 242, 254, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(255, 0, 128, 0.15) 0%, transparent 50%);
+    background-attachment: fixed;
+    color: var(--text-color);
+    overflow-x: hidden;
+    padding: 25px;
+    transition: background 0.8s ease;
+}
+
+/* Hiệu ứng nền chuyển động nhẹ nhàng */
+.bg-glow-effect {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: linear-gradient(135deg, #7b2cbf, #00f2fe);
+    filter: blur(120px);
+    border-radius: 50%;
+    top: -200px;
+    left: -200px;
+    z-index: -1;
+    opacity: 0.4;
+    animation: floatGlow 12s infinite alternate ease-in-out;
+}
+
+@keyframes floatGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(150px, 150px) scale(1.2); }
+}
+
+/* Glassmorphism Card Core */
+.glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--glass-shadow);
+    padding: 24px;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 242, 254, 0.15);
+}
+
+/* Dashboard Container Layout */
+.dashboard-wrapper {
+    max-width: 1350px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 30px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    background: linear-gradient(90deg, #fff, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.rotating-icon {
+    font-size: 1.8rem;
+    color: #00f2fe;
+    animation: rotateSlow 10s linear infinite;
+}
+
+@keyframes rotateSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.header-clock {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* Dashboard Grid (2 Columns) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 25px;
+}
+
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Card Headers */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e2e8f0;
+}
+
+/* Select City Dropdown */
+select {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+select option {
+    background: #0f1026;
+    color: #fff;
+}
+
+select:hover, select:focus {
+    border-color: #00f2fe;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Weather Display Dynamic Box */
+.weather-display {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 15px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.weather-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.temp-big {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.weather-icon-pulse {
+    font-size: 3.5rem;
+    animation: pulseIcon 3s infinite ease-in-out;
+}
+
+@keyframes pulseIcon {
+    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(255,255,255,0.4)); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 25px rgba(0,242,254,0.8)); }
+}
+
+.weather-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.weather-detail-item {
+    background: rgba(255, 255, 255, 0.04);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Suggestion Card */
+.suggestion-content {
+    background: rgba(0, 242, 254, 0.06);
+    border-left: 4px solid #00f2fe;
+    padding: 15px;
+    border-radius: 0 12px 12px 0;
+    font-size: 0.98rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+}
+
+/* Countdown Card */
+.countdown-input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.countdown-input-group input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: #fff;
+    outline: none;
+}
+
+.countdown-input-group button {
+    background: linear-gradient(135deg, #3b82f6, #00f2fe);
+    border: none;
+    color: white;
+    padding: 0 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.countdown-timer-box {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #38bdf8;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 12px;
+    letter-spacing: 1px;
+}
+
+/* Itinerary Form */
+.itinerary-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.itinerary-form input {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 16px;
+    border-radius: 12px;
+    color: #fff;
+    outline: none;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+.itinerary-form input:focus {
+    border-color: #00f2fe;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+}
+
+.itinerary-form button {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+    border: none;
+    padding: 0 22px;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.itinerary-form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+}
+
+/* Filters */
+.itinerary-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.filter-chip {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    padding: 6px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.filter-chip.active, .filter-chip:hover {
+    background: rgba(0, 242, 254, 0.15);
+    color: #00f2fe;
+    border-color: #00f2fe;
+    box-shadow: 0 0 10px rgba(0, 242, 254, 0.2);
+}
+
+/* Itinerary List Items with insane transitions */
+.itinerary-list-wrapper {
+    max-height: 320px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+#itinerary-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.itinerary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 14px 18px;
+    border-radius: 14px;
+    animation: slideInUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transition: all 0.3s ease;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.itinerary-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(0, 242, 254, 0.3);
+    transform: translateX(4px);
+}
+
+.itinerary-info {
+    cursor: pointer;
+    flex: 1;
+}
+
+.itinerary-info h4 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #f1f5f9;
+    transition: color 0.3s;
+}
+
+.itinerary-info p {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 3px;
+}
+
+/* Completed State */
+.itinerary-item.completed h4 {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+.itinerary-item.completed p {
+    color: #475569;
+}
+
+.delete-item-btn {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.delete-item-btn:hover {
+    background: #ef4444;
+    color: #fff;
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.5);
+}
+
+/* Action Button Small (Export) */
+.action-btn-small {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+    padding: 6px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s;
+}
+
+.action-btn-small:hover {
+    background: #00f2fe;
+    color: #090a16;
+    border-color: #00f2fe;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+.itinerary-footer {
+    margin-top: 15px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Dynamic Weather Themes */
+body.theme-sunny {
+    background-image: radial-gradient(circle at 10% 20%, rgba(245, 158, 11, 0.2) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(239, 68, 68, 0.15) 0%, transparent 40%);
+}
+body.theme-rainy {
+    background-image: radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.25) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(14, 165, 233, 0.2) 0%, transparent 40%);
+}
+body.theme-cloudy {
+    background-image: radial-gradient(circle at 10% 20%, rgba(148, 163, 184, 0.2) 0%, transparent 40%),
+                      radial-gradient(circle at 90% 80%, rgba(100, 116, 139, 0.2) 0%, transparent 40%);
+}
+
+/* Responsive Desktop & Mobile */
+@media (max-width: 900px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+    body {
+        padding: 15px;
+    }
+}

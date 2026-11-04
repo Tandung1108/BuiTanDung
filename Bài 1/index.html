@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber AI Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="logo-area">
+                <h2><i class="fa-solid fa-bolt-lightning"></i> AI Nexus</h2>
+            </div>
+            <ul class="nav-links">
+                <li class="active"><a href="#"><i class="fa-solid fa-terminal"></i> Quản lý Task</a></li>
+                <li><a href="#"><i class="fa-solid fa-microchip"></i> Hiệu suất AI</a></li>
+                <li><a href="#"><i class="fa-solid fa-sliders"></i> Tùy chỉnh</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <button id="sidebar-toggle" class="sidebar-toggle"><i class="fa-solid fa-bars-staggered"></i></button>
+                <div class="greeting-box">
+                    <h1 id="greeting-text">Chào Dũn, hệ thống đã sẵn sàng.</h1>
+                    <p id="real-time-clock"><i class="fa-regular fa-clock"></i> Đang kết nối thời gian thực...</p>
+                </div>
+            </header>
+
+            <!-- Input & Filter Section -->
+            <section class="task-section">
+                <div class="input-group">
+                    <input type="text" id="task-input" placeholder="Nhập nhiệm vụ mới cho AI hệ thống...">
+                    <button id="add-btn"><i class="fa-solid fa-plus"></i> Khởi tạo</button>
+                </div>
+
+                <div class="filter-group">
+                    <button class="filter-btn active" data-filter="all">Tất cả</button>
+                    <button class="filter-btn" data-filter="active">Đang xử lý</button>
+                    <button class="filter-btn" data-filter="completed">Đã hoàn tất</button>
+                </div>
+            </section>
+
+            <!-- Task List -->
+            <section class="task-list-container">
+                <ul id="task-list">
+                    <!-- Tasks rendered here -->
+                </ul>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <span id="task-count"><i class="fa-solid fa-database"></i> Tổng số tác vụ: 0</span>
+            </footer>
+        </main>
+    </div>
+
+    <script src="test.js"></script>
+    <script src="code.c++"></script>
+</body>
+</html>

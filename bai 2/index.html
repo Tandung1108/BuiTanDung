@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Travel & Weather Nexus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="theme-sunny">
+    <!-- Hiệu ứng nền chuyển động không gian -->
+    <div class="bg-glow-effect"></div>
+    <div class="floating-particles"></div>
+
+    <div class="dashboard-wrapper">
+        <!-- HEADER -->
+        <header class="main-header glass-card">
+            <div class="logo-area">
+                <i class="fa-solid fa-earth-americas rotating-icon"></i>
+                <h2>Nexus Explorer</h2>
+            </div>
+            <div class="header-clock" id="live-clock">
+                <i class="fa-regular fa-clock"></i> <span>00:00:00</span>
+            </div>
+        </header>
+
+        <!-- MAIN GRID CONTAINER (2 CỘT) -->
+        <main class="dashboard-grid">
+            
+            <!-- CỘT TRÁI: WEATHER & SMART SUGGESTIONS & COUNTDOWN -->
+            <section class="left-column">
+                <!-- Weather Module -->
+                <div class="glass-card weather-card">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-cloud-sun"></i> Trạm Thời Tiết</h3>
+                        <div class="select-wrapper">
+                            <select id="city-select">
+                                <!-- Render dynamically -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="weather-display animate-pop" id="weather-display-area">
+                        <!-- Render weather info dynamically -->
+                    </div>
+                </div>
+
+                <!-- Mở rộng 1: Smart AI Suggestions -->
+                <div class="glass-card suggestion-card">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> AI Gợi Ý Hành Trình</h3>
+                    <div id="ai-suggestion-text" class="suggestion-content">
+                        Đang phân tích thông số thời tiết...
+                    </div>
+                </div>
+
+                <!-- Mở rộng 3: Countdown Timer -->
+                <div class="glass-card countdown-card">
+                    <h3><i class="fa-solid fa-hourglass-start"></i> Đếm Ngược Khởi Hành</h3>
+                    <div class="countdown-input-group">
+                        <input type="datetime-local" id="countdown-target">
+                        <button id="set-countdown-btn">Bắt đầu</button>
+                    </div>
+                    <div id="countdown-display" class="countdown-timer-box">
+                        <span>00</span>d : <span>00</span>h : <span>00</span>m : <span>00</span>s
+                    </div>
+                </div>
+            </section>
+
+            <!-- CỘT PHẢI: ITINERARY PLANNER & EXPORT -->
+            <section class="right-column">
+                <div class="glass-card itinerary-card">
+                    <div class="card-header">
+                        <h3><i class="fa-solid fa-map-location-dot"></i> Lịch Trình Khám Phá</h3>
+                        <!-- Mở rộng 2: Export to Text -->
+                        <button id="export-btn" class="action-btn-small" title="Tải file .txt">
+                            <i class="fa-solid fa-download"></i> Xuất File
+                        </button>
+                    </div>
+
+                    <!-- Input Form -->
+                    <div class="itinerary-form">
+                        <input type="text" id="place-input" placeholder="Tên địa điểm (Ví dụ: Hồ Xuân Hương)...">
+                        <input type="text" id="time-input" placeholder="Thời gian (Ví dụ: 08:00 AM - Chiều)...">
+                        <button id="add-place-btn"><i class="fa-solid fa-plus"></i> Thêm</button>
+                    </div>
+
+                    <!-- Filter buttons -->
+                    <div class="itinerary-filters">
+                        <button class="filter-chip active" data-filter="all">Tất cả</button>
+                        <button class="filter-chip" data-filter="active">Chưa đến</button>
+                        <button class="filter-chip" data-filter="completed">Đã đến</button>
+                    </div>
+
+                    <!-- Danh sách địa điểm -->
+                    <div class="itinerary-list-wrapper">
+                        <ul id="itinerary-list">
+                            <!-- Dynamic items -->
+                        </ul>
+                    </div>
+
+                    <!-- Footer thống kê -->
+                    <div class="itinerary-footer">
+                        <span id="itinerary-count">Tổng số: 0 địa điểm</span>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Theme Brand Showcase</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- THANH CÔNG CỤ THEME (THEME TOOLBAR CỐ ĐỊNH) -->
+    <div class="theme-toolbar">
+        <div class="toolbar-section">
+            <span class="toolbar-label"><i class="fa-solid fa-palette"></i> Theme:</span>
+            <button class="theme-btn blue-theme active" data-theme="blue" title="Modern Blue"></button>
+            <button class="theme-btn green-theme" data-theme="green" title="Organic Green"></button>
+            <button class="theme-btn pink-theme" data-theme="pink" title="Cyberpunk Pink"></button>
+        </div>
+        
+        <div class="toolbar-divider"></div>
+
+        <div class="toolbar-section">
+            <span class="toolbar-label"><i class="fa-solid fa-droplet"></i> Tùy chọn màu:</span>
+            <input type="color" id="custom-color-picker" value="#2563eb" title="Chọn màu chủ đạo tùy ý">
+        </div>
+
+        <div class="toolbar-divider"></div>
+
+        <div class="toolbar-section">
+            <button id="mode-toggle-btn" class="mode-toggle-btn" title="Chuyển đổi Dark/Light Mode">
+                <i class="fa-solid fa-moon" id="mode-icon"></i> <span id="mode-text">Dark</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo"><i class="fa-solid fa-cubes"></i> Brand<span>Showcase</span></a>
+            <nav class="nav-menu">
+                <a href="#hero">Trang Chủ</a>
+                <a href="#features">Tính Năng</a>
+                <a href="#showcase">Bộ Sưu Tập</a>
+                <a href="#contact">Liên Hệ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION VỚI HÌNH ẢNH ĐỒNG BỘ THEO THEME -->
+    <section id="hero" class="hero-section">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-badge">Dynamic Branding System</span>
+                <h1>Trải Nghiệm Giao Diện Tùy Chỉnh Thông Minh</h1>
+                <p>Khám phá hệ thống thương hiệu linh hoạt với khả năng thay đổi màu sắc chủ đạo, kiểu chữ, hình ảnh và chế độ sáng/tối chỉ với một cú click chuột, được lưu trữ tự động qua LocalStorage.</p>
+                <div class="hero-btns">
+                    <a href="#showcase" class="btn btn-primary">Khám Phá Ngay</a>
+                    <a href="#features" class="btn btn-outline">Tìm Hiểu Thêm</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <!-- Hình ảnh này sẽ thay đổi linh hoạt theo JavaScript khi đổi Theme -->
+                <img id="banner-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80" alt="Dynamic Brand Showcase Banner" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION TÍNH NĂNG -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Công Nghệ & Tính Năng Vượt Trội</h2>
+                <p>Xây dựng dựa trên nền tảng Frontend hiện đại mang lại trải nghiệm mượt mà tối ưu.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                    <h3>CSS Variables</h3>
+                    <p>Quản lý toàn bộ giao diện thông qua các biến cấu hình động, giúp thay đổi màu sắc và font chữ tức thì mà không cần tải lại trang.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-floppy-disk"></i></div>
+                    <h3>LocalStorage State</h3>
+                    <p>Ghi nhớ chính xác lựa chọn Dark/Light Mode và Theme thương hiệu yêu thích của bạn ngay cả khi tắt trình duyệt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Smooth Transitions</h3>
+                    <p>Mọi thay đổi giao diện đều được áp dụng hiệu ứng chuyển cảnh mượt mà chuẩn mực trong vòng 0.5 giây.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION BỘ SƯU TẬP -->
+    <section id="showcase" class="showcase-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Không Gian Trưng bày Sáng Tạo</h2>
+                <p>Mỗi sắc thái màu sắc mang lại một cảm xúc và phong cách nhận diện hoàn toàn riêng biệt.</p>
+            </div>
+            <div class="showcase-grid">
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Showcase 1" loading="lazy">
+                    <div class="showcase-overlay">
+                        <h3>Modern Architecture</h3>
+                        <p>Đỉnh cao thiết kế công nghệ hiện đại.</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" alt="Showcase 2" loading="lazy">
+                    <div class="showcase-overlay">
+                        <h3>Digital Circuit</h3>
+                        <p>Tối ưu hóa hiệu năng phần cứng.</p>
+                    </div>
+                </div>
+                <div class="showcase-item">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80" alt="Showcase 3" loading="lazy">
+                    <div class="showcase-overlay">
+                        <h3>Natural Harmony</h3>
+                        <p>Thân thiện môi trường và bền vững.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 Dynamic Brand Showcase. Thiết kế theo tiêu chuẩn Bài Tập 5.</p>
+            <div class="social-links">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>

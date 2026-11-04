@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Ký Sự Kiện AI Nexus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-glow"></div>
+
+    <div class="container">
+        <header class="header">
+            <h2><i class="fa-solid fa-calendar-check"></i> AI Nexus Summit 2026</h2>
+            <p>Hệ thống đăng ký sự kiện công nghệ thông minh</p>
+            <div id="seat-counter" class="seat-badge">
+                <i class="fa-solid fa-users"></i> Đang tải số lượng chỗ ngồi...
+            </div>
+        </header>
+
+        <!-- Form Đăng Ký -->
+        <form id="registration-form" class="glass-form">
+            <div class="form-group">
+                <label for="fullname"><i class="fa-solid fa-user"></i> Họ và tên</label>
+                <input type="text" id="fullname" placeholder="Nhập đầy đủ họ tên...">
+                <small class="error-msg" id="name-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="email"><i class="fa-solid fa-envelope"></i> Địa chỉ Email</label>
+                <input type="email" id="email" placeholder="name@example.com">
+                <small class="error-msg" id="email-error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="phone"><i class="fa-solid fa-phone"></i> Số điện thoại</label>
+                <input type="tel" id="phone" placeholder="0912345678">
+                <small class="error-msg" id="phone-error"></small>
+            </div>
+
+            <button type="submit" id="submit-btn" class="submit-btn">
+                <span class="btn-text">Xác Nhận Đăng Ký</span>
+                <span class="spinner" style="display: none;"><i class="fa-solid fa-spinner fa-spin"></i> Đang xử lý...</span>
+            </button>
+        </form>
+    </div>
+
+    <!-- Modal Thông Báo Thành Công & QR Code -->
+    <div id="success-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content glass-card">
+            <div class="success-icon"><i class="fa-solid fa-circle-check"></i></div>
+            <h2>Đăng Ký Thành Công!</h2>
+            <p>Cảm ơn bạn đã đăng ký tham gia sự kiện. Thông tin chi tiết và vé đã được gửi vào Email của bạn.</p>
+            
+            <div class="qr-container">
+                <p>Mã QR Check-in của bạn:</p>
+                <img id="qr-code-img" src="" alt="QR Check-in">
+            </div>
+
+            <button id="close-modal-btn" class="close-btn">Đóng</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

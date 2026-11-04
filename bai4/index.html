@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURELIA | Luxury Timepieces & Craftsmanship</title>
+    <!-- Google Fonts: Playfair Display cho Tiêu đề & Plus Jakarta Sans cho Nội dung -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- STICKY HEADER -->
+    <header id="site-header" class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">AURELIA</a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#hero" class="nav-link" data-i18n="nav_home">Trang Chủ</a>
+                <a href="#products" class="nav-link" data-i18n="nav_products">Bộ Sưu Tập</a>
+                <a href="#specs" class="nav-link" data-i18n="nav_specs">Thông Số</a>
+                <a href="#story" class="nav-link" data-i18n="nav_story">Thương Hiệu</a>
+            </nav>
+            <div class="nav-actions">
+                <!-- Nút Đổi Ngôn Ngữ (VI / EN) -->
+                <button id="lang-toggle" class="lang-btn">
+                    <i class="fa-solid fa-globe"></i> <span id="lang-text">EN</span>
+                </button>
+                <a href="#products" class="cta-btn-sm" data-i18n="nav_cta">Khám Phá Ngay</a>
+                <!-- Hamburger Menu cho Mobile -->
+                <div class="hamburger" id="hamburger">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION VỚI VIDEO BACKGROUND -->
+    <section id="hero" class="hero">
+        <div class="video-overlay"></div>
+        <!-- Video nền tự động phát, không tiếng, lặp lại -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-watch-close-up-shots-41600-large.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ video.
+        </video>
+        <div class="hero-content">
+            <span class="sub-title" data-i18n="hero_sub">TUYỆT TÁC THỜI GIAN ĐỈNH CAO</span>
+            <h1 class="main-title" data-i18n="hero_title">Biểu Tượng Của Sự Xa Xỉ & Đẳng Cấp</h1>
+            <p class="description" data-i18n="hero_desc">Được chế tác thủ công bởi những nghệ nhân hàng đầu thế giới, mang lại vẻ đẹp vĩnh cửu đi cùng năm tháng.</p>
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-primary" data-i18n="hero_btn1">Xem Bộ Sưu Tập</a>
+                <a href="#story" class="btn btn-outline" data-i18n="hero_btn2">Câu Chuyện Thương Hiệu</a>
+            </div>
+        </div>
+        <div class="scroll-down">
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- BỘ SƯU TẬP SẢN PHẨM -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge" data-i18n="prod_badge">ĐỘC QUYỀN HẠN CHẾ</span>
+                <h2 data-i18n="prod_title">Bộ Sưu Tập Hoàng Gia</h2>
+                <p data-i18n="prod_desc">Mỗi chiếc đồng hồ là một tuyên ngôn về phong cách và quyền lực cá nhân.</p>
+            </div>
+
+            <div class="product-grid">
+                <!-- Sản phẩm 1 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80" alt="Aurelia Chrono Royal" loading="lazy">
+                        <span class="tag-hot">Limited Edition</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aurelia Chrono Royal</h3>
+                        <p class="price">$12,500</p>
+                        <p class="p-desc" data-i18n="p1_desc">Vỏ vàng nguyên khối 18K, mặt kính sapphire chống trầy xước tuyệt đối.</p>
+                        <button class="btn-buy" data-i18n="buy_btn">Đặt Mua Ngay</button>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 2 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=800&q=80" alt="Aurelia Obsidian Black" loading="lazy">
+                        <span class="tag-hot">Bestseller</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aurelia Obsidian Black</h3>
+                        <p class="price">$9,800</p>
+                        <p class="p-desc" data-i18n="p2_desc">Thiết kế lộ cơ tinh xảo, phối màu đen tuyền huyền bí kết hợp sắc vàng.</p>
+                        <button class="btn-buy" data-i18n="buy_btn">Đặt Mua Ngay</button>
+                    </div>
+                </div>
+
+                <!-- Sản phẩm 3 -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=800&q=80" alt="Aurelia Heritage Gold" loading="lazy">
+                        <span class="tag-hot">New Release</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Aurelia Heritage Gold</h3>
+                        <p class="price">$15,200</p>
+                        <p class="p-desc" data-i18n="p3_desc">Tác phẩm nghệ thuật vượt thời gian với độ chính xác chuẩn Thụy Sĩ.</p>
+                        <button class="btn-buy" data-i18n="buy_btn">Đặt Mua Ngay</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TABS THÔNG SỐ KỸ THUẬT -->
+    <section id="specs" class="specs-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge" data-i18n="spec_badge">ĐỘ CHÍNH XÁC HOÀN HẢO</span>
+                <h2 data-i18n="spec_title">Thông Số Kỹ Thuật Đỉnh Cao</h2>
+                <p data-i18n="spec_desc">Khám phá công nghệ chế tác ẩn giấu bên trong lớp vỏ xa xỉ.</p>
+            </div>
+
+            <div class="tabs-container">
+                <!-- Tab Headers -->
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-tab="tab-movement" data-i18n="tab1_title">Bộ Máy (Movement)</button>
+                    <button class="tab-btn" data-tab="tab-material" data-i18n="tab2_title">Chất Liệu (Materials)</button>
+                    <button class="tab-btn" data-tab="tab-water" data-i18n="tab3_title">Chống Nước (Water Resistance)</button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div class="tab-content active" id="tab-movement">
+                    <div class="spec-grid">
+                        <div class="spec-text">
+                            <h3 data-i18n="m_heading">Caliber A900 Automatic In-House</h3>
+                            <p data-i18n="m_desc">Sử dụng bộ máy cơ tự lên cót độc quyền với 42 chân kính (jewels), tần số dao động 28,800 vph, đảm bảo năng lượng dự trữ lên đến 72 giờ liên tục mà không cần đeo.</p>
+                            <ul class="spec-list">
+                                <li><i class="fa-solid fa-check"></i> Sai số: -1/+2 giây mỗi ngày</li>
+                                <li><i class="fa-solid fa-check"></i> Chống shock công nghệ Kif shock absorber</li>
+                            </ul>
+                        </div>
+                        <div class="spec-img">
+                            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Movement" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-material">
+                    <div class="spec-grid">
+                        <div class="spec-text">
+                            <h3 data-i18n="mat_heading">Vàng 18K & Kính Sapphire Nguyên Khối</h3>
+                            <p data-i18n="mat_desc">Toàn bộ phần vỏ được đúc từ vàng nguyên khối 18K đánh bóng thủ công. Mặt kính làm từ tinh thể sapphire chống lóa, độ cứng đạt điểm 9 trên thang đo Mohs (chỉ sau kim cương).</p>
+                            <ul class="spec-list">
+                                <li><i class="fa-solid fa-check"></i> Vàng nguyên chất kiểm định quốc tế</li>
+                                <li><i class="fa-solid fa-check"></i> Dây đeo da cá sấu Nam Mỹ khâu tay</li>
+                            </ul>
+                        </div>
+                        <div class="spec-img">
+                            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80" alt="Material" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="tab-water">
+                    <div class="spec-grid">
+                        <div class="spec-text">
+                            <h3 data-i18n="w_heading">Khả Năng Chống Nước Đến 100 Mét</h3>
+                            <p data-i18n="w_desc">Hệ thống gioăng kép thế hệ mới cùng núm vặn khóa ren screw-down crown bảo vệ tối đa bộ máy trước áp lực nước dưới độ sâu lên tới 100 mét (10 ATM).</p>
+                            <ul class="spec-list">
+                                <li><i class="fa-solid fa-check"></i> Tiêu chuẩn kiểm định áp suất khắt khe</li>
+                                <li><i class="fa-solid fa-check"></i> An tâm khi bơi lội và lặn nông</li>
+                            </ul>
+                        </div>
+                        <div class="spec-img">
+                            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=600&q=80" alt="Water resistance" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CÂU CHUYỆN THƯƠNG HIỆU -->
+    <section id="story" class="story-section">
+        <div class="container story-flex">
+            <div class="story-content">
+                <span class="badge" data-i18n="story_badge">DI SẢN & NGHỆ THUẬT</span>
+                <h2 data-i18n="story_title">Hành Trình Định Nghĩa Lại Sự Hoàn Hảo</h2>
+                <p data-i18n="story_desc1">Được thành lập tại Geneva, Thụy Sĩ, AURELIA ra đời với sứ mệnh tôn vinh thời gian – tài sản quý giá nhất của nhân loại. Chúng tôi không chỉ sản xuất đồng hồ, chúng tôi lưu giữ khoảnh khắc bằng cơ khí chính xác đỉnh cao.</p>
+                <p data-i18n="story_desc2">Mỗi chiếc đồng hồ tiêu tốn hơn 300 giờ làm việc thủ công của các bậc thầy nghệ nhân trước khi xuất xưởng.</p>
+                <div class="stats-grid">
+                    <div class="stat-box">
+                        <h3>100%</h3>
+                        <p data-i18n="stat1">Thủ Công Thụy Sĩ</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3>300+</h3>
+                        <p data-i18n="stat2">Giờ Chế Tác</p>
+                    </div>
+                </div>
+            </div>
+            <div class="story-image">
+                <img src="https://images.unsplash.com/photo-1512290900722-9a70f8a84839?auto=format&fit=crop&w=800&q=80" alt="Craftsmanship" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">AURELIA</a>
+                <p data-i18n="footer_desc">Tuyệt tác thời gian dành riêng cho những quý ông và quý cô định hình phong cách dẫn đầu.</p>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_col1">Liên Kết Nhanh</h4>
+                <a href="#hero" data-i18n="nav_home">Trang Chủ</a>
+                <a href="#products" data-i18n="nav_products">Bộ Sưu Tập</a>
+                <a href="#specs" data-i18n="nav_specs">Thông Số Kỹ Thuật</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_col2">Bảo Mật & Hỗ Trợ</h4>
+                <a href="#">Chính Sách Bảo Hành Toàn Cầu</a>
+                <a href="#">Điều Khoản Dịch Vụ</a>
+                <a href="#">Hệ Thống Boutique</a>
+            </div>
+            <div class="footer-col">
+                <h4 data-i18n="footer_col3">Đăng Ký Nhận Tin VIP</h4>
+                <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Đăng ký nhận ưu đãi VIP thành công!');">
+                    <input type="email" placeholder="Nhập email của bạn..." required>
+                    <button type="submit"><i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 AURELIA Luxury Horology. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- POPUP KHUYẾN MÃI (Sau 10 giây xuất hiện) -->
+    <div id="promo-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="close-modal" class="close-modal-btn"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-badge"><i class="fa-solid fa-crown"></i> Ưu Đãi Độc Quyền</div>
+            <h2>Nhận Ngay Voucher Giảm Giá 10%</h2>
+            <p>Dành riêng cho khách hàng đăng ký mua sản phẩm đầu tiên tại AURELIA trong tháng này.</p>
+            <div class="promo-code-box">
+                <span id="code-text">AURELIA10VIP</span>
+                <button onclick="navigator.clipboard.writeText('AURELIA10VIP'); alert('Đã sao chép mã giảm giá!');">Sao Chép</button>
+            </div>
+            <a href="#products" id="redeem-btn" class="btn btn-primary" style="width: 100%; text-align: center; display: block; margin-top: 15px;">Sử Dụng Ngay</a>
+        </div>
+    </div>
+
+    <!-- JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
